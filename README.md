@@ -565,7 +565,8 @@ Here's an example schema file
     "name": "Proof of Work Data Structure",
     "schema": {
         "strict": false,
-        "parent": [<txid>, <txid>],
+        "inherits": ["<txid>", "<txid>"],
+        "extends": ["<txid>", "<txid>"],
         "args": [
             {
                 "name": "nonce",
