@@ -541,7 +541,7 @@ B <message> <content-type> <encoding> | MAP SET 'type' 'comment' 'upc' <upc_code
 
 ## MAP + MetaNet with Bitcoin Schema
 
-Lets say we want to crete the following metanet structure:
+Lets say we want to create the following metanet structure:
 
 ![Sample Profile](images/profile_node.svg)
 
