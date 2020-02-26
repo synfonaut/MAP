@@ -548,6 +548,46 @@ Lets say we want to create the following metanet structure:
 
 We use metanet protocol to describe the relationship between the nodes, and MAP to define metadata on each node. 
 
+## MAP Schema
+
+Using the `MAP SCHEMA` command you can point an on-chain schema file. Currently supported are BitcoinSchema and [BSVABI](https://bsvabi.org).
+
+```json
+MAP SCHEMA <txid> | MAP SET 'profile.name' 'Satchmo' 'profile.text' 'Some cool text' 'profile.picture' 'b://986...'
+```
+
+Here's an example schema file
+
+`// TODO: Find a better example`
+
+```json
+{
+    "name": "Proof of Work Data Structure",
+    "schema": {
+        "strict": false,
+        "args": [
+            {
+                "name": "nonce",
+                "type": "Integer"
+            },
+            {
+                "name": "parent",
+                "type": "Hash",
+                "description": "A parent can be a Bitcoin txid or proof-of-work hash (21e8). If no parent is specified, any derived hashes will be the top of the tree (new planets)",
+                "optional": true
+            },
+            {
+                "name": "namespace",
+                "type": "String",
+                "description": "Namespaces can be something specific like 'user' or a random UUID to avoid hash collisions",
+                "optional": true
+            },
+        ]
+    }
+}
+```
+
+
 #### Bitcoin Schema
 Bitcoin Schema is a declarative syntax for creating bitcoin transactions using META and MAP protocols.
 
